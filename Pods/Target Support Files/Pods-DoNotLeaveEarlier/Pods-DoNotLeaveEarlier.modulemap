@@ -1,0 +1,6 @@
+framework module Pods_DoNotLeaveEarlier {
+  umbrella header "Pods-DoNotLeaveEarlier-umbrella.h"
+
+  export *
+  module * { export * }
+}
