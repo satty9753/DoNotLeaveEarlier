@@ -14,15 +14,12 @@ class WeekVC: NSViewController {
     
     @objc dynamic var records = [Record]()
     
-    var calenderManager: CalenderManager?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         tableView.delegate = self
         
-        calenderManager = CalenderManager(baseDate: Date())
-        let week:[Record] = calenderManager?.generateDaysInWeek(for: Date()).map{
+        let week:[Record] = CalenderManager.shared.generateDaysInWeek(for: Date()).map{
             let date = $0.toString()
             let value = Database.shared.find(day: date)
             
@@ -30,7 +27,7 @@ class WeekVC: NSViewController {
             
             let record = Record(dateWithWeek, value?.toString(format: TimeStyle.time.rawValue))
                 return record
-            } ?? []
+        } 
         
         self.records.append(contentsOf: week)
         
@@ -39,7 +36,7 @@ class WeekVC: NSViewController {
     }
     
     func selectToday(){
-        let index = calenderManager?.getDayInWeek(for: Date()) ?? 0
+        let index = CalenderManager.shared.getDayInWeek(for: Date()) 
         
         let indexSet = IndexSet(integer: index-1)
         

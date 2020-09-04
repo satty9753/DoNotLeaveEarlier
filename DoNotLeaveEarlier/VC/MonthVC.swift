@@ -27,8 +27,7 @@ class MonthVC: NSViewController {
         let date = Date()
         
         titleLabel.title = date.toString(format: "YYYY-MM")
-        calenderManager = CalenderManager(baseDate: date)
-        days = calenderManager?.generateDaysInMonth(for: date)
+        days = CalenderManager.shared.generateDaysInMonth(for: date)
 
         collectionView.register(DateItem.self, forItemWithIdentifier: cellId)
     }
@@ -75,25 +74,5 @@ extension MonthVC: NSCollectionViewDelegateFlowLayout{
         return NSView()
     }
     
-    private func dayOfWeekLetter(for dayNumber: Int) -> String {
-       switch dayNumber {
-       case 1:
-         return "S"
-       case 2:
-         return "M"
-       case 3:
-         return "T"
-       case 4:
-         return "W"
-       case 5:
-         return "T"
-       case 6:
-         return "F"
-       case 7:
-         return "S"
-       default:
-         return ""
-       }
-     }
-
+  
 }

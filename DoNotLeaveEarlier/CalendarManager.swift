@@ -12,18 +12,21 @@ import Foundation
 class CalenderManager{
     
     private var selectedDate: Date! = nil
-    private var baseDate: Date {
-        didSet {
-            days = generateDaysInMonth(for: baseDate)
-    //        headerView.baseDate = baseDate
-          }
-        }
+    
+    static let shared = CalenderManager()
+//    private var baseDate: Date {
+//        didSet {
+//            days = generateDaysInMonth(for: baseDate)
+//    //        headerView.baseDate = baseDate
+//          }
+//        }
 
-    private lazy var days = generateDaysInMonth(for: baseDate)
-
-    private var numberOfWeeksInBaseDate: Int {
-      calendar.range(of: .weekOfMonth, in: .month, for: baseDate)?.count ?? 0
-    }
+//    private lazy var days = generateDaysInMonth(for: baseDate)
+//
+//    private var numberOfWeeksInBaseDate: Int {
+//      calendar.range(of: .weekOfMonth, in: .month, for: baseDate)?.count ?? 0
+//    }
+    
 
 //    private let selectedDateChanged: ((Date) -> Void)?
     private let calendar = Calendar(identifier: .gregorian)
@@ -40,10 +43,10 @@ class CalenderManager{
 //       self.selectedDateChanged = selectedDateChanged
 //     }
     
-        init(baseDate: Date) {
-           self.selectedDate = baseDate
-           self.baseDate = baseDate
-         }
+//        init(baseDate: Date) {
+//           self.selectedDate = baseDate
+//           self.baseDate = baseDate
+//         }
     
 }
 
@@ -145,11 +148,12 @@ extension CalenderManager {
     
     let punchInTime = Database.shared.find(day: date.toString())?.toString(format: TimeStyle.time.rawValue)
     
+    
 
     return Day(
       date: date,
       number: dateFormatter.string(from: date),
-      isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
+      isSelected: false,
       isWithinDisplayedMonth: isWithinDisplayedMonth,
       punchInTime: punchInTime
     )
