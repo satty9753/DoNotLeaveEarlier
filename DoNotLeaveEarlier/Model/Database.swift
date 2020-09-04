@@ -9,6 +9,12 @@
 import Foundation
 import SQLite
 
+enum TimeFormat{
+    case day
+    case week
+    case month
+}
+
 class Database{
     static let shared = Database()
     
@@ -18,9 +24,13 @@ class Database{
     
     private let id = Expression<Int64>("id")
     
-    private let date = Expression<String>("dateString")
+    private let dateColumn = Expression<String>("dateString")
     
-    private let punchInTime = Expression<Date>("punchInTime")
+//    private let monthColumn = Expression<String>("month")
+//
+//    private let yearColumn = Expression<String>("year")
+    
+    private let punchInTimeColumn = Expression<Date>("punchInTime")
     
     private init(){
         var documentsURL = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)[0]
@@ -38,8 +48,10 @@ class Database{
         do{
             try db.run(recordTable.create(ifNotExists: true){ t in
                  t.column(id, primaryKey: true)
-                 t.column(date)
-                 t.column(punchInTime)
+                 t.column(dateColumn)
+//                 t.column(monthColumn)
+//                 t.column(yearColumn)
+                 t.column(punchInTimeColumn)
             })
         }catch{
             print(error.localizedDescription)
@@ -49,16 +61,18 @@ class Database{
     func save(today: Date){
         do{
             let todayDateString = today.toString()
-            
             var value: Date?
             
-            let results = try db.prepare(recordTable.filter(date==todayDateString))
+            let results = try db.prepare(recordTable.filter(dateColumn==todayDateString))
             for r in results{
-                value = r[punchInTime]
+                value = r[punchInTimeColumn]
             }
+//
+//            let year = today.toString(format: "YYYY")
+//            let month = today.toString(format: "MM")
             
             if value == nil{
-                let insert = recordTable.insert(date<-todayDateString, punchInTime<-today)
+                let insert = recordTable.insert(dateColumn<-todayDateString, punchInTimeColumn<-today)
                 try db.run(insert)
                 print("save successfully")
                 let noti = Notification(name: Notification.Name(rawValue: "SaveSuccess"))
@@ -74,20 +88,39 @@ class Database{
     
     func find(day:String)->Date?{
         do{
-            let records = try db.prepare(recordTable.filter(day == date))
+            let records = try db.prepare(recordTable.filter(day == dateColumn))
             let record = records.first { (row) -> Bool in
                 return true
             }
-            return record?[punchInTime]
+            return record?[punchInTimeColumn]
         }catch{
             print(error.localizedDescription)
             return nil
         }
     }
     
+    
+//    func getMonthData(date: Date) -> [Date]?{
+//        let month = date.toString(format: "MM")
+//        
+//        var daysOfDate = [Date]()
+//        
+//        do{
+//            let records = try db.prepare(recordTable.filter(month == monthColumn))
+//            for r in records{
+//                daysOfDate.append(r[punchInTimeColumn])
+//            }
+//            return daysOfDate
+//        }
+//        catch{
+//            print(error.localizedDescription)
+//            return nil
+//        }
+//    }
+    
     func delete(day: String){
         do{
-            let record = recordTable.filter(day == date)
+            let record = recordTable.filter(day == dateColumn)
             try db.run(record.delete())
         }catch{
             print(error.localizedDescription)

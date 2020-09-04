@@ -142,12 +142,16 @@ extension CalenderManager {
       value: dayOffset,
       to: baseDate)
       ?? baseDate
+    
+    let punchInTime = Database.shared.find(day: date.toString())?.toString(format: TimeStyle.time.rawValue)
+    
 
     return Day(
       date: date,
       number: dateFormatter.string(from: date),
       isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
-      isWithinDisplayedMonth: isWithinDisplayedMonth
+      isWithinDisplayedMonth: isWithinDisplayedMonth,
+      punchInTime: punchInTime
     )
   }
 

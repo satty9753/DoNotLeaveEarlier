@@ -28,6 +28,8 @@ struct Day {
   let isSelected: Bool
   // 4
   let isWithinDisplayedMonth: Bool
+    
+  let punchInTime: String?
 }
 
 

@@ -10,6 +10,7 @@ import Cocoa
 
 class DateItem: NSCollectionViewItem {
    
+    @IBOutlet weak var timeTextField: NSTextField!
     @IBOutlet weak var dateLabel: NSTextFieldCell!
     @IBOutlet weak var timeLabel: NSTextFieldCell!
     
