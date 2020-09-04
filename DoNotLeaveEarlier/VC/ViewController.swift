@@ -22,8 +22,8 @@ class ViewController: NSViewController {
 //
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        changeView(segmentedControl)
     }
 
     override var representedObject: Any? {
@@ -33,37 +33,24 @@ class ViewController: NSViewController {
     }
     
     @IBAction func changeView(_ sender: NSSegmentedControl) {
-        
         let todayVC = storyboard?.instantiateController(withIdentifier: "TodayVC") as! TodayVC
         let weekVC = storyboard?.instantiateController(withIdentifier: "WeekVC") as! WeekVC
+        let monthVC = storyboard?.instantiateController(withIdentifier: "MonthVC") as! MonthVC
         
         remove()
+        
         switch sender.selectedSegment {
         case 0:
             add(todayVC, frame: containerView.frame)
         case 1:
             add(weekVC, frame: containerView.frame)
+        case 2:
+            add(monthVC, frame: containerView.frame)
         default:
             print("default")
         }
         
     }
-    
-//    func add(_ child: NSViewController, frame: CGRect? = nil) {
-//        addChild(child)
-//
-//        if let frame = frame {
-//            child.view.frame = frame
-//        }
-//
-//        containerView.addSubview(child.view)
-//    }
-//
-//
-//    func remove() {
-//        view.removeFromSuperview()
-//        removeFromParent()
-//    }
     
 
 }

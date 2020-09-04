@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320354CE24FF2D5D0054835A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354CD24FF2D5D0054835A /* Model.swift */; };
+		320354D024FF3DFC0054835A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354CF24FF3DFC0054835A /* Utility.swift */; };
+		320354D424FF69450054835A /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354D324FF69450054835A /* MonthVC.swift */; };
+		320354D624FF9AB50054835A /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354D524FF9AB50054835A /* CalendarManager.swift */; };
 		32967DDB24FE3C31006B1010 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDA24FE3C31006B1010 /* TodayVC.swift */; };
 		32967DDD24FE4185006B1010 /* VC+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDC24FE4185006B1010 /* VC+extension.swift */; };
 		32967DE324FE4520006B1010 /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DE224FE4520006B1010 /* WeekVC.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320354CD24FF2D5D0054835A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		320354CF24FF3DFC0054835A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		320354D324FF69450054835A /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
+		320354D524FF9AB50054835A /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = DoNotLeaveEarlier/CalendarManager.swift; sourceTree = SOURCE_ROOT; };
 		32967DDA24FE3C31006B1010 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
 		32967DDC24FE4185006B1010 /* VC+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+extension.swift"; sourceTree = "<group>"; };
 		32967DE224FE4520006B1010 /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
@@ -47,6 +55,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320354D124FF4ECA0054835A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32967DE424FE532D006B1010 /* Database.swift */,
+				320354CD24FF2D5D0054835A /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		320354D224FF4ED60054835A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				329CA2CC24FE3AED0028A42E /* ViewController.swift */,
+				32967DDA24FE3C31006B1010 /* TodayVC.swift */,
+				32967DE224FE4520006B1010 /* WeekVC.swift */,
+				320354D324FF69450054835A /* MonthVC.swift */,
+				320354D524FF9AB50054835A /* CalendarManager.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		329CA2BE24FE3AED0028A42E = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				329CA2CA24FE3AED0028A42E /* AppDelegate.swift */,
-				329CA2CC24FE3AED0028A42E /* ViewController.swift */,
 				32967DDC24FE4185006B1010 /* VC+extension.swift */,
-				32967DE424FE532D006B1010 /* Database.swift */,
-				32967DDA24FE3C31006B1010 /* TodayVC.swift */,
-				32967DE224FE4520006B1010 /* WeekVC.swift */,
+				320354CF24FF3DFC0054835A /* Utility.swift */,
+				320354D224FF4ED60054835A /* VC */,
+				320354D124FF4ECA0054835A /* Model */,
 				329CA2CE24FE3AEF0028A42E /* Assets.xcassets */,
 				329CA2D024FE3AEF0028A42E /* Main.storyboard */,
 				329CA2D324FE3AEF0028A42E /* Info.plist */,
@@ -213,12 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320354CE24FF2D5D0054835A /* Model.swift in Sources */,
 				32967DE524FE532D006B1010 /* Database.swift in Sources */,
+				320354D424FF69450054835A /* MonthVC.swift in Sources */,
 				32967DDB24FE3C31006B1010 /* TodayVC.swift in Sources */,
 				32967DE324FE4520006B1010 /* WeekVC.swift in Sources */,
+				320354D024FF3DFC0054835A /* Utility.swift in Sources */,
 				329CA2CD24FE3AED0028A42E /* ViewController.swift in Sources */,
 				32967DDD24FE4185006B1010 /* VC+extension.swift in Sources */,
 				329CA2CB24FE3AED0028A42E /* AppDelegate.swift in Sources */,
+				320354D624FF9AB50054835A /* CalendarManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
