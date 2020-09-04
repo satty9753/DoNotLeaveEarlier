@@ -11,6 +11,8 @@
 		320354D024FF3DFC0054835A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354CF24FF3DFC0054835A /* Utility.swift */; };
 		320354D424FF69450054835A /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354D324FF69450054835A /* MonthVC.swift */; };
 		320354D624FF9AB50054835A /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320354D524FF9AB50054835A /* CalendarManager.swift */; };
+		3277AAB325020CA1007F314F /* DateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3277AAB125020CA1007F314F /* DateItem.swift */; };
+		3277AAB425020CA1007F314F /* DateItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3277AAB225020CA1007F314F /* DateItem.xib */; };
 		32967DDB24FE3C31006B1010 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDA24FE3C31006B1010 /* TodayVC.swift */; };
 		32967DDD24FE4185006B1010 /* VC+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDC24FE4185006B1010 /* VC+extension.swift */; };
 		32967DE324FE4520006B1010 /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DE224FE4520006B1010 /* WeekVC.swift */; };
@@ -27,6 +29,8 @@
 		320354CF24FF3DFC0054835A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		320354D324FF69450054835A /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
 		320354D524FF9AB50054835A /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarManager.swift; path = DoNotLeaveEarlier/CalendarManager.swift; sourceTree = SOURCE_ROOT; };
+		3277AAB125020CA1007F314F /* DateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItem.swift; sourceTree = "<group>"; };
+		3277AAB225020CA1007F314F /* DateItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateItem.xib; sourceTree = "<group>"; };
 		32967DDA24FE3C31006B1010 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
 		32967DDC24FE4185006B1010 /* VC+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+extension.swift"; sourceTree = "<group>"; };
 		32967DE224FE4520006B1010 /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				329CA2CA24FE3AED0028A42E /* AppDelegate.swift */,
 				32967DDC24FE4185006B1010 /* VC+extension.swift */,
 				320354CF24FF3DFC0054835A /* Utility.swift */,
+				3277AAB125020CA1007F314F /* DateItem.swift */,
+				3277AAB225020CA1007F314F /* DateItem.xib */,
 				320354D224FF4ED60054835A /* VC */,
 				320354D124FF4ECA0054835A /* Model */,
 				329CA2CE24FE3AEF0028A42E /* Assets.xcassets */,
@@ -189,6 +195,7 @@
 			files = (
 				329CA2CF24FE3AEF0028A42E /* Assets.xcassets in Resources */,
 				329CA2D224FE3AEF0028A42E /* Main.storyboard in Resources */,
+				3277AAB425020CA1007F314F /* DateItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 				32967DDD24FE4185006B1010 /* VC+extension.swift in Sources */,
 				329CA2CB24FE3AED0028A42E /* AppDelegate.swift in Sources */,
 				320354D624FF9AB50054835A /* CalendarManager.swift in Sources */,
+				3277AAB325020CA1007F314F /* DateItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
