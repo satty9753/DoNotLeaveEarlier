@@ -99,24 +99,64 @@ class Database{
         }
     }
     
+    func getThisWeek(date: Date)->[Date]{
+        
+        var numbersOfDate = [Date]()
+        
+        do{
+            let weekdays = CalenderManager.shared.generateDaysInWeek(for: date)
+            
+            guard let lowerBound = weekdays.first, let upperBound = weekdays.last else{
+                return []}
+            
+            let table = recordTable.filter(lowerBound..<upperBound ~= punchInTimeColumn)
+            
+            for row in try db.prepare(table){
+                numbersOfDate.append(row[punchInTimeColumn])
+            }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        return numbersOfDate
+    }
     
-//    func getMonthData(date: Date) -> [Date]?{
-//        let month = date.toString(format: "MM")
-//        
-//        var daysOfDate = [Date]()
-//        
-//        do{
-//            let records = try db.prepare(recordTable.filter(month == monthColumn))
-//            for r in records{
-//                daysOfDate.append(r[punchInTimeColumn])
-//            }
-//            return daysOfDate
-//        }
-//        catch{
-//            print(error.localizedDescription)
-//            return nil
-//        }
-//    }
+    func getThisMonth(date: Date)->[Date]{
+        var numbersOfDate = [Date]()
+        do{
+            let monthDays = CalenderManager.shared.generateDaysInMonth(for: date)
+            
+            guard let lowerBound = monthDays.first?.date, let upperBound = monthDays.last?.date else{
+                return []}
+            
+            let table = recordTable.filter(lowerBound..<upperBound ~= punchInTimeColumn)
+            
+            for row in try db.prepare(table){
+                numbersOfDate.append(row[punchInTimeColumn])
+            }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        return numbersOfDate
+    }
+    
+    func getCustomDate(from:Date, to:Date)->[Date]{
+        
+        var numbersOfDate = [Date]()
+        
+        let table = recordTable.filter(from..<to ~= punchInTimeColumn)
+        do{
+            for row in try db.prepare(table){
+                numbersOfDate.append(row[punchInTimeColumn])
+            }
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+        return numbersOfDate
+    }
+    
     
     func delete(day: String){
         do{

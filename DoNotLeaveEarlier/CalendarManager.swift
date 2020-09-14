@@ -85,14 +85,14 @@ extension CalenderManager {
         let day = calendar.component(.weekday, from: today)
         return day
     }
-
+    
+    
     func generateDaysInWeek(for baseDate: Date) -> [Date] {
         let today = calendar.startOfDay(for: Date())
         let dayOfWeek = calendar.component(.weekday, from: today)
         let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: today)!
         let days = (weekdays.lowerBound ..< weekdays.upperBound)
             .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: today) }
-        
         return days
         
     }

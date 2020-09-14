@@ -38,3 +38,11 @@ struct MonthMetadata {
   let firstDay: Date
   let firstDayWeekday: Int
 }
+
+
+enum DateFormat: Int{
+    case day = 0
+    case week
+    case month
+    case custom
+}

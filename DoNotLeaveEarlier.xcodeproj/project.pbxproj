@@ -14,6 +14,7 @@
 		3277AAB325020CA1007F314F /* DateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3277AAB125020CA1007F314F /* DateItem.swift */; };
 		3277AAB425020CA1007F314F /* DateItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3277AAB225020CA1007F314F /* DateItem.xib */; };
 		3277AAB72502352A007F314F /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3277AAB62502352A007F314F /* HeaderView.xib */; };
+		3290A6B22506007400C8A64A /* ExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3290A6B02505FE9E00C8A64A /* ExportVC.swift */; };
 		32967DDB24FE3C31006B1010 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDA24FE3C31006B1010 /* TodayVC.swift */; };
 		32967DDD24FE4185006B1010 /* VC+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DDC24FE4185006B1010 /* VC+extension.swift */; };
 		32967DE324FE4520006B1010 /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32967DE224FE4520006B1010 /* WeekVC.swift */; };
@@ -33,6 +34,7 @@
 		3277AAB125020CA1007F314F /* DateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItem.swift; sourceTree = "<group>"; };
 		3277AAB225020CA1007F314F /* DateItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateItem.xib; sourceTree = "<group>"; };
 		3277AAB62502352A007F314F /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		3290A6B02505FE9E00C8A64A /* ExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportVC.swift; sourceTree = "<group>"; };
 		32967DDA24FE3C31006B1010 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
 		32967DDC24FE4185006B1010 /* VC+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+extension.swift"; sourceTree = "<group>"; };
 		32967DE224FE4520006B1010 /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				32967DDA24FE3C31006B1010 /* TodayVC.swift */,
 				32967DE224FE4520006B1010 /* WeekVC.swift */,
 				320354D324FF69450054835A /* MonthVC.swift */,
+				3290A6B02505FE9E00C8A64A /* ExportVC.swift */,
 				320354D524FF9AB50054835A /* CalendarManager.swift */,
 			);
 			path = VC;
@@ -264,6 +267,7 @@
 				32967DE524FE532D006B1010 /* Database.swift in Sources */,
 				320354D424FF69450054835A /* MonthVC.swift in Sources */,
 				32967DDB24FE3C31006B1010 /* TodayVC.swift in Sources */,
+				3290A6B22506007400C8A64A /* ExportVC.swift in Sources */,
 				32967DE324FE4520006B1010 /* WeekVC.swift in Sources */,
 				320354D024FF3DFC0054835A /* Utility.swift in Sources */,
 				329CA2CD24FE3AED0028A42E /* ViewController.swift in Sources */,
@@ -407,15 +411,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DoNotLeaveEarlier/DoNotLeaveEarlier.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = 7UK8PZR57E;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = DoNotLeaveEarlier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iit.DoNotLeaveEarlier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -428,15 +434,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DoNotLeaveEarlier/DoNotLeaveEarlier.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4Q5CYDAG3B;
-				ENABLE_HARDENED_RUNTIME = YES;
+				DEVELOPMENT_TEAM = 7UK8PZR57E;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = DoNotLeaveEarlier/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iit.DoNotLeaveEarlier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

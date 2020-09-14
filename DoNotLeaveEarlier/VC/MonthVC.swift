@@ -30,6 +30,7 @@ class MonthVC: NSViewController {
         days = CalenderManager.shared.generateDaysInMonth(for: date)
 
         collectionView.register(DateItem.self, forItemWithIdentifier: cellId)
+        
     }
     
 }

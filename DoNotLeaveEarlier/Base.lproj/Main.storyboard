@@ -1,10 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Export-->
+        <scene sceneID="tVv-pN-So6">
+            <objects>
+                <viewController title="Export" storyboardIdentifier="ExportVC" id="JiI-6R-xeO" customClass="ExportVC" customModule="DoNotLeaveEarlier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Xfe-oK-zTq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="14" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epy-IA-rd0">
+                                <rect key="frame" x="40" y="157" width="87" height="106"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xOZ-CK-9eu">
+                                        <rect key="frame" x="-1" y="89" width="75" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="This Day" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MhB-bD-PXP">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dateFormatSelect:" target="JiI-6R-xeO" id="a1h-zr-FFe"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-kp-5ID">
+                                        <rect key="frame" x="-1" y="59" width="85" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="This Week" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="nYS-xa-cr4">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dateFormatSelect:" target="JiI-6R-xeO" id="e1c-cz-z6K"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="314-6a-Bd0">
+                                        <rect key="frame" x="-1" y="29" width="90" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="This Month" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="6rF-f3-HfT">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dateFormatSelect:" target="JiI-6R-xeO" id="h2k-yW-i9J"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="VNN-ux-z2v">
+                                        <rect key="frame" x="-1" y="-1" width="69" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="Custom" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ume-lY-bYg">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dateFormatSelect:" target="JiI-6R-xeO" id="9GZ-fj-dB1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="23" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-wM-H3V">
+                                <rect key="frame" x="40" y="118" width="253" height="24"/>
+                                <subviews>
+                                    <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uh4-y3-qC2">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="JJ9-EF-vo8">
+                                            <font key="font" metaFont="system"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                                <!--1982-02-12 16:00:00 +0000-->
+                                            </date>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </datePickerCell>
+                                    </datePicker>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-gb-wY3">
+                                        <rect key="frame" x="118" y="4" width="17" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="to" id="uF1-1K-FuS">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="31e-kH-Vcu">
+                                        <rect key="frame" x="156" y="0.0" width="100" height="28"/>
+                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="IZI-Q1-57t">
+                                            <font key="font" metaFont="system"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                                <!--1982-02-12 16:00:00 +0000-->
+                                            </date>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </datePickerCell>
+                                    </datePicker>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HVi-gG-VeM">
+                                <rect key="frame" x="368" y="29" width="52" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Export" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9HJ-Xi-wak">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="controlContent"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="export:" target="JiI-6R-xeO" id="KYi-jQ-3di"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="epy-IA-rd0" firstAttribute="centerY" secondItem="Xfe-oK-zTq" secondAttribute="centerY" multiplier="0.6" id="5le-rl-2mb"/>
+                            <constraint firstAttribute="bottom" secondItem="HVi-gG-VeM" secondAttribute="bottom" constant="30" id="KMU-w9-zCx"/>
+                            <constraint firstItem="uu4-wM-H3V" firstAttribute="top" secondItem="epy-IA-rd0" secondAttribute="bottom" constant="15" id="PWL-3y-BBR"/>
+                            <constraint firstItem="epy-IA-rd0" firstAttribute="leading" secondItem="Xfe-oK-zTq" secondAttribute="leading" constant="40" id="f4t-Cy-jck"/>
+                            <constraint firstItem="uu4-wM-H3V" firstAttribute="leading" secondItem="Xfe-oK-zTq" secondAttribute="leading" constant="40" id="i4P-O4-gsW"/>
+                            <constraint firstAttribute="trailing" secondItem="HVi-gG-VeM" secondAttribute="trailing" constant="30" id="xUc-e4-KCR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fromDatePicker" destination="uh4-y3-qC2" id="mIE-D6-iqX"/>
+                        <outlet property="toDatePicker" destination="31e-kH-Vcu" id="8dc-J3-LhT"/>
+                    </connections>
+                </viewController>
+                <customObject id="Bgm-1o-rne" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="-236"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -84,6 +223,11 @@
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="runPageLayout:" target="Ady-hI-5gd" id="Din-rz-gC5"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Export" keyEquivalent="e" id="uRR-4k-Cgi">
+                                            <connections>
+                                                <action selector="export:" target="Voe-Tx-rLC" id="9RW-2N-BlW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
@@ -598,7 +742,7 @@
                                                 <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
+                                        <menuItem title="Enter Full Screen" state="on" keyEquivalent="f" id="4J7-dP-txa">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
                                                 <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
@@ -650,7 +794,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DoNotLeaveEarlier" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DoNotLeaveEarlier" customModuleProvider="target">
+                    <connections>
+                        <outlet property="mainMenu" destination="uQy-DD-JDr" id="LXk-EM-5Wk"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -722,7 +870,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="714"/>
+            <point key="canvasLocation" x="54" y="719"/>
         </scene>
         <!--TodayVC-->
         <scene sceneID="Sa3-5P-8Qf">
@@ -753,7 +901,7 @@
                 </viewController>
                 <customObject id="bcW-Ve-OaM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="195"/>
+            <point key="canvasLocation" x="690" y="189"/>
         </scene>
         <!--WeekVC-->
         <scene sceneID="wBR-Lv-DZw">
@@ -886,7 +1034,7 @@
                 </arrayController>
                 <userDefaultsController representsSharedInstance="YES" id="hVC-rk-JmD"/>
             </objects>
-            <point key="canvasLocation" x="787" y="674"/>
+            <point key="canvasLocation" x="707" y="709"/>
         </scene>
         <!--MonthVC-->
         <scene sceneID="MJr-bC-0QD">
@@ -897,13 +1045,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIU-a3-alP">
-                                <rect key="frame" x="0.0" y="31" width="600" height="308"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="339"/>
                                 <clipView key="contentView" id="FFt-VN-633">
-                                    <rect key="frame" x="1" y="1" width="598" height="306"/>
+                                    <rect key="frame" x="1" y="1" width="598" height="337"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="qtS-RA-DwX">
-                                            <rect key="frame" x="0.0" y="0.0" width="598" height="306"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="598" height="337"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="KKm-OM-s2t">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -933,29 +1081,11 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="rrA-RW-GU5">
-                                <rect key="frame" x="20" y="10" width="69" height="16"/>
-                                <buttonCell key="cell" type="square" title="PREVIOUS" bezelStyle="shadowlessSquare" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="qys-0r-ARj">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="VSd-O8-IsM">
-                                <rect key="frame" x="541" y="10" width="39" height="16"/>
-                                <buttonCell key="cell" type="square" title="NEXT" bezelStyle="shadowlessSquare" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="hmN-1g-Rsm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="cVo-1u-Y0x" firstAttribute="top" secondItem="HP4-7m-V2S" secondAttribute="top" constant="10" id="2BY-gg-T3b"/>
-                            <constraint firstItem="rrA-RW-GU5" firstAttribute="leading" secondItem="HP4-7m-V2S" secondAttribute="leading" constant="20" id="4fT-oA-7pR"/>
                             <constraint firstItem="ZIU-a3-alP" firstAttribute="top" secondItem="cVo-1u-Y0x" secondAttribute="bottom" constant="5" id="IXJ-cm-SyM"/>
-                            <constraint firstAttribute="trailing" secondItem="VSd-O8-IsM" secondAttribute="trailing" constant="20" id="TDh-w7-TGb"/>
-                            <constraint firstAttribute="bottom" secondItem="rrA-RW-GU5" secondAttribute="bottom" constant="10" id="XSR-1p-3K8"/>
-                            <constraint firstItem="rrA-RW-GU5" firstAttribute="top" secondItem="ZIU-a3-alP" secondAttribute="bottom" constant="5" id="Y1b-xw-qv8"/>
-                            <constraint firstAttribute="bottom" secondItem="VSd-O8-IsM" secondAttribute="bottom" constant="10" id="aQ3-e0-BsD"/>
+                            <constraint firstAttribute="bottom" secondItem="ZIU-a3-alP" secondAttribute="bottom" id="nQP-35-We4"/>
                             <constraint firstItem="ZIU-a3-alP" firstAttribute="leading" secondItem="HP4-7m-V2S" secondAttribute="leading" id="oN5-vQ-wGE"/>
                             <constraint firstAttribute="trailing" secondItem="ZIU-a3-alP" secondAttribute="trailing" id="q7v-Rv-aRP"/>
                             <constraint firstItem="cVo-1u-Y0x" firstAttribute="leading" secondItem="HP4-7m-V2S" secondAttribute="leading" constant="20" id="uZ1-Bn-0Rm"/>
@@ -963,14 +1093,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="qtS-RA-DwX" id="nPj-pB-VVY"/>
-                        <outlet property="nextButton" destination="VSd-O8-IsM" id="K7e-Uq-WGx"/>
-                        <outlet property="previousButton" destination="rrA-RW-GU5" id="BYk-Cg-NO7"/>
                         <outlet property="titleLabel" destination="2mS-fq-nVJ" id="tmT-nw-yX1"/>
                     </connections>
                 </viewController>
                 <customObject id="YPa-aO-3Ju" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779" y="1137"/>
+            <point key="canvasLocation" x="707" y="1172"/>
         </scene>
     </scenes>
 </document>
